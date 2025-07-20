@@ -1,0 +1,16 @@
+%Test Case 7: Syntactically incorrect testcase
+%Parser error: Using 'endrecord' instead of 'endunion' to close a union definition.
+
+_wrongUnion input parameter list [record #abc b2d5]
+output parameter list [int c3];
+    union #abc
+		type #line : ln; 
+		type #point: pt; 
+		type #traingle:tr;
+    endunion    % <-- Should be 'endunion', so the parser will fail
+
+    type union #abc : d2c3;
+
+    c3 <--- 10;    
+    return [c3]    % missing semicon here
+;end
